@@ -1,0 +1,78 @@
+{
+  "datacenter": "local_machine",
+  "data_dir": "c:\\src\\consul_play\\data",
+  "log_level": "TRACE",
+  "node_name": "masternode",
+  "server": true,
+  "leave_on_terminate": true,
+  "skip_leave_on_interrupt": true,
+  "enable_local_script_checks": true,
+  "autopilot": {
+    "cleanup_dead_servers": true
+  },
+  "watches": [
+    {
+     "type": "key",
+      "key": "notepad/one/state/current",
+      "args": ["c:\\src\\consul_play\\bin\\notepad\\run.cmd", "one"]
+    },
+    {
+     "type": "key",
+      "key": "notepad/one/state/desired",
+      "args": ["c:\\src\\consul_play\\bin\\notepad\\run.cmd", "one"]
+    },
+    {
+     "type": "key",
+      "key": "notepad/two/state/current",
+      "args": ["c:\\src\\consul_play\\bin\\notepad\\run.cmd", "two"]
+    },
+    {
+     "type": "key",
+      "key": "notepad/two/state/desired",
+      "args": ["c:\\src\\consul_play\\bin\\notepad\\run.cmd", "two"]
+    },
+    {
+      "type": "key",
+      "key": "notepad/one/state/desired",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://localhost:8500/v1/kv/notepad/two/state/desired_too",
+        "method": "PUT",
+        "timout": "20s",
+        "tls_skip_verify": false
+      }
+    }
+
+  ],
+  "services": [
+    {
+      "id": "notepad1",
+      "name": "notepad_one",
+      "tags": ["notepad"],
+      "checks": [
+        {
+          "id": "check_notepad_one",
+          "name": "check_notepad_one",
+          "args": ["c:\\src\\consul_play\\bin\\notepad\\check.cmd", "one"],
+          "interval": "5s"
+        }
+      ]
+    },
+    {
+      "id": "notepad2",
+      "name": "notepad_two",
+      "tags": ["notepad"],
+      "checks": [
+        {
+          "id": "check_notepad_two",
+          "name": "check_notepad_two",
+          "args": ["c:\\src\\consul_play\\bin\\notepad\\check.cmd", "two"],
+          "interval": "5s"
+        }
+      ]
+    }
+  ],
+  "telemetry": {
+     "statsite_address": "127.0.0.1:2180"
+  }
+}
