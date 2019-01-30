@@ -1,8 +1,17 @@
 # consul_play
+
 Just playing with Consul.
 
-Things are hard-coded to my local Windows paths.
 
+## Install Dependencies
+
+    `choco install -y consul`
+    `choco install -y curl`
+    `choco install -y jq`
+    `choco install -y sed`
+
+
+## Play
 
 To start the server:
 

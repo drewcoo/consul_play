@@ -1,6 +1,6 @@
 {
   "datacenter": "local_machine",
-  "data_dir": "c:\\src\\consul_play\\data",
+  "data_dir": "REPLACEME_ROOT_DIRECTORY\\data",
   "log_level": "TRACE",
   "node_name": "masternode",
   "server": true,
@@ -14,22 +14,22 @@
     {
      "type": "key",
       "key": "notepad/one/state/current",
-      "args": ["c:\\src\\consul_play\\bin\\notepad\\run.cmd", "one"]
+      "args": ["REPLACEME_ROOT_DIRECTORY\\bin\\notepad\\run.cmd", "one"]
     },
     {
      "type": "key",
       "key": "notepad/one/state/desired",
-      "args": ["c:\\src\\consul_play\\bin\\notepad\\run.cmd", "one"]
+      "args": ["REPLACEME_ROOT_DIRECTORY\\bin\\notepad\\run.cmd", "one"]
     },
     {
      "type": "key",
       "key": "notepad/two/state/current",
-      "args": ["c:\\src\\consul_play\\bin\\notepad\\run.cmd", "two"]
+      "args": ["REPLACEME_ROOT_DIRECTORY\\bin\\notepad\\run.cmd", "two"]
     },
     {
      "type": "key",
       "key": "notepad/two/state/desired",
-      "args": ["c:\\src\\consul_play\\bin\\notepad\\run.cmd", "two"]
+      "args": ["REPLACEME_ROOT_DIRECTORY\\bin\\notepad\\run.cmd", "two"]
     },
     {
       "type": "key",
@@ -53,7 +53,7 @@
         {
           "id": "check_notepad_one",
           "name": "check_notepad_one",
-          "args": ["c:\\src\\consul_play\\bin\\notepad\\check.cmd", "one"],
+          "args": ["REPLACEME_ROOT_DIRECTORY\\bin\\notepad\\check.cmd", "one"],
           "interval": "5s"
         }
       ]
@@ -66,7 +66,7 @@
         {
           "id": "check_notepad_two",
           "name": "check_notepad_two",
-          "args": ["c:\\src\\consul_play\\bin\\notepad\\check.cmd", "two"],
+          "args": ["REPLACEME_ROOT_DIRECTORY\\bin\\notepad\\check.cmd", "two"],
           "interval": "5s"
         }
       ]
