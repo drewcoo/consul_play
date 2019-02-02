@@ -35,3 +35,7 @@ Once instance one is up, two will discover that it's changed and two will
 also start.
 
 Set one to `stopped` to have it eventually stop and two eventually follow.
+
+## More
+
+It works well with the [TICK monitoring suite](https://www.influxdata.com/time-series-platform/) and the [ELK log aggregator](https://www.elastic.co/webinars/introduction-elk-stack), both OSS easy and free at the low end and as complex and possibly expensive as you like on the high end. As an example, there's a [plugin for Telegraf, the T in TICK](https://www.consul.io/docs/guides/monitoring-telegraf.html). And there are plugins for dashboards like [Graphana](https://grafana.com/plugins/sbueringer-consul-datasource).
