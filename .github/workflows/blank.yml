@@ -9,7 +9,7 @@ name: CI
 on:
   push:
     paths-ignore:
-    - .github/**/*
+    - '.github/**/*'
     branches: [ master ]
   pull_request:
     branches: [ master ]
